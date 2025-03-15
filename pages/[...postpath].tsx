@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 			redirect: {
 				permanent: false,
 				destination: `${
-					`https://www.effectiveratecpm.com/zphueche?key=ce3b328a3b8d52aae10d049be9269ec8/`
+					`https://www.effectiveratecpm.com/zphueche?key=ce3b328a3b8d52aae10d049be9269ec8/`   + encodeURI(path as string)
 				}`,
 			},
 		};
