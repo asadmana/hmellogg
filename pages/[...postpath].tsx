@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import { GraphQLClient, gql } from 'graphql-request';
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-	const endpoint = "http://hmellogg.fwh.is/graphql";
+	const endpoint = "http://hmellogg.fwh.is/graphql"
 	const graphQLClient = new GraphQLClient(endpoint);
 	const referringURL = ctx.req.headers?.referer || null;
 	const pathArr = ctx.query.postpath as Array<string>;
@@ -91,10 +91,7 @@ const Post: React.FC<PostProps> = (props) => {
 				<meta property="article:published_time" content={post.dateGmt} />
 				<meta property="article:modified_time" content={post.modifiedGmt} />
 				<meta property="og:image" content={post.featuredImage.node.sourceUrl} />
-				<meta
-					property="og:image:alt"
-					content={post.featuredImage.node.altText || post.title}
-				/>
+				<meta property="og:image:alt" content={post.featuredImage.node.altText || post.title} />
 				<title>{post.title}</title>
 			</Head>
 			<div className="post-container">
